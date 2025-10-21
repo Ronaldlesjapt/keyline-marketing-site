@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle" data-lang-key="pageTitle">KeyLine Marketing & Advert | Luxury Digital Growth Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Playfair Display (Serif for titles) and Montserrat (Sans-Serif for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Colors: Navy, Gold, Cyan (Accent) */
+        body {
+            font-family: 'Montserrat', sans-serif; 
+            color: #333A42; /* Soft dark text */
+            background-color: #F8F9FA; /* Off-white background */
+            scroll-behavior: smooth; 
+        }
+        
+        /* New class for luxurious serif headings */
+        .font-serif-lux {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Base Colors */
+        .text-keyline-navy { color: #192A56; } 
+        .bg-keyline-navy { background-color: #192A56; } 
+        .text-keyline-gold { color: #D4AF37; } 
+        .border-keyline-gold { border-color: #D4AF37; } 
+        .text-keyline-cyan { color: #41C9E2; }
+        .bg-keyline-cyan { background-color: #41C9E2; }
+        
+        /* Gradients for Luxury Look */
+        .bg-hero-gradient {
+            /* Deep Navy transitioning to a darker black/navy for depth */
+            background: linear-gradient(180deg, #192A56 0%, #0F1A3A 100%);
+        }
+        .bg-gold-cta {
+            /* Gold transitioning to a slightly richer tone for depth on CTAs */
+            background: linear-gradient(90deg, #D4AF37 0%, #E6C764 100%);
+        }
+
+        /* Shadows */
+        .shadow-lux { box-shadow: 0 20px 30px -5px rgba(25, 42, 86, 0.18), 0 8px 15px -5px rgba(25, 42, 86, 0.1); }
+        .shadow-gold { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+
+        /* Custom transition for menu opening/closing (Handles the 'pop out' effect) */
+        .menu-transition {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .menu-transition.open {
+            max-height: 500px; /* Sufficient height to cover all links */
+            transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+            opacity: 1;
+        }
+
+        /* Styling for the menu links themselves when open */
+        #navLinks a {
+            padding: 1rem 0;
+            display: block;
+            border-bottom: 1px solid #f0f0f0; /* Separator for vertical links */
+        }
+        #navLinks a:last-child {
+            border-bottom: none;
+        }
+        
+        /* Language Toggle Styling */
+        .lang-active {
+            font-weight: bold;
+            color: #D4AF37; /* Keyline Gold */
+        }
+        .lang-inactive {
+            color: #A0AEC0; /* Gray-400 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar - Clean and Crisp with Hamburger Toggle -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lux">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-3xl font-black text-keyline-navy font-serif-lux scroll-link" data-lang-key="logoTitle">KeyLine<span class="text-keyline-gold">.</span></a>
+                </div>
+                
+                <!-- Right Side Controls: Language & Menu Toggle -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher -->
+                    <div class="flex items-center text-xl font-bold cursor-pointer">
+                        <span id="langEn" class="lang-active hover:text-keyline-gold transition duration-150" onclick="switchLanguage('en')">EN</span>
+                        <span class="mx-2 text-gray-400">|</span>
+                        <span id="langAm" class="lang-inactive hover:text-keyline-gold transition duration-150" onclick="switchLanguage('am')">AM</span>
+                    </div>
+
+                    <!-- Universal Menu Button (3 Lines) - Aligned Right -->
+                    <button id="menuToggle" class="text-gray-600 hover:text-keyline-navy focus:outline-none transition duration-150" aria-expanded="false" onclick="toggleMenu()">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Toggleable Menu Links: Forced Vertical Stack (UPDATED ORDER) -->
+            <div id="navLinks" class="menu-transition bg-white border-t border-gray-100 hidden">
+                <div class="flex flex-col items-stretch space-y-0 text-center pb-2 pt-0">
+                    
+                    <a href="#home" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navHome">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navAbout">About Us</a>
+                    <a href="#services" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navServices">Services</a>
+                    <a href="#process" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navProcess">Process</a>
+                    <a href="#packages" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navEngagement">Engagement</a>
+                    <a href="#clients" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navPortfolio">Portfolio</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navTestimonials">Testimonials</a>
+                    <a href="#faq" class="text-gray-600 hover:text-keyline-navy text-lg font-medium transition duration-150 hover:bg-gray-50 scroll-link" data-lang-key="navFAQ">FAQ</a>
+                    
+                    <!-- CTA Button (Also a smooth scroll link) -->
+                    <a href="#contact" class="bg-keyline-cyan text-keyline-navy hover:bg-keyline-gold py-4 rounded-b-lg text-lg font-semibold transition duration-300 shadow-lg mt-2 mb-0 scroll-link" data-lang-key="navContactCTA">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto">
+
+        <!-- 1. Hero Section - (Home) -->
+        <section id="home" class="py-36 md:py-56 px-6 lg:px-8 bg-hero-gradient text-white rounded-b-[60px] shadow-2xl mb-24">
+            <div class="text-center">
+                <h1 id="heroTitle" class="text-5xl sm:text-7xl lg:text-9xl font-black leading-tight mb-8 font-serif-lux" data-lang-key="heroTitle">
+                    Elevating <span class="text-keyline-gold">Ethiopian Brands</span>
+                </h1>
+                <p id="heroSubtitle" class="text-xl md:text-4xl font-light max-w-5xl mx-auto mb-16 opacity-90 tracking-wide" data-lang-key="heroSubtitle">
+                    The exclusive strategic partner for high-value industrial and dynamic consumer sectors, driving unparalleled digital awareness and market dominance.
+                </p>
+                <a href="#about" id="heroCTA" class="inline-block bg-gold-cta hover:opacity-90 text-keyline-navy text-xl font-bold py-5 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-gold shadow-2xl scroll-link" data-lang-key="heroCTA">
+                    Discover Our Vision
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US START: Core Values & Team (Building Trust Early) -->
+        
+        <!-- SECTION: Core Values (About Us) -->
+        <section id="about" class="py-24 md:py-40 px-6 lg:px-8 bg-keyline-navy/5 rounded-3xl my-24">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="aboutPillarsTitle">
+                Pillars of Partnership
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-20 max-w-5xl mx-auto" data-lang-key="aboutPillarsSubtitle">
+                Our agency operates on a foundation of strategic integrity, ensuring every campaign is built for sustainable growth and measurable excellence.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-gold">
+                    <div class="text-7xl mb-4">📈</div>
+                    <h3 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="pillar1Title">Metrics First</h3>
+                    <p class="text-gray-700" data-lang-key="pillar1Desc">All strategies are derived from and measured by clear, ROI-focused metrics, not vanity figures.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-cyan">
+                    <div class="text-7xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="pillar2Title">Client Confidentiality</h3>
+                    <p class="text-gray-700" data-lang-key="pillar2Desc">Absolute discretion and protection of your proprietary business intelligence.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-gold">
+                    <div class="text-7xl mb-4">💡</div>
+                    <h3 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="pillar3Title">Creative Velocity</h3>
+                    <p class="text-gray-700" data-lang-key="pillar3Desc">High-speed content creation cycle to dominate trending topics and maintain relevance.</p>
+                </div>
+                
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-cyan">
+                    <div class="text-7xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="pillar4Title">Ethiopian Focus</h3>
+                    <p class="text-gray-700" data-lang-key="pillar4Desc">Deep local market understanding with a strategy tailored to the Ethiopian landscape.</p>
+                </div>
+                
+            </div>
+            
+            <div class="max-w-5xl mx-auto border-t border-keyline-gold/50 my-24"></div>
+
+            <!-- SECTION: THE LEADERSHIP TEAM -->
+            <div class="bg-keyline-navy text-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="leadershipTitle">
+                    The Architects of Growth
+                </h2>
+                <p class="text-2xl text-center text-gray-300 mb-20 max-w-5xl mx-auto" data-lang-key="leadershipSubtitle">
+                    KeyLine was founded to bridge the gap between traditional prestige and modern digital execution in Ethiopia. Meet the leadership driving your success.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    
+                    <!-- Leadership Profile 1: The Visionary -->
+                    <div class="text-center p-8 bg-white/5 rounded-xl border border-keyline-gold/50 shadow-lux backdrop-blur-sm hover:shadow-gold transition duration-300">
+                        <div class="text-7xl mb-4">🧠</div>
+                        <h3 class="text-3xl font-bold text-keyline-cyan mb-2 font-serif-lux" data-lang-key="leader1Role">The Visionary</h3>
+                        <p class="text-xl font-medium text-keyline-gold mb-4" data-lang-key="leader1Title">Managing Partner</p>
+                        <p class="text-gray-200 leading-relaxed" data-lang-key="leader1Desc">Focuses on global digital trends, macro-economic factors, and long-term brand positioning. Ensures our strategies are not just current, but predictive.</p>
+                    </div>
+                    
+                    <!-- Leadership Profile 2: The Strategist -->
+                    <div class="text-center p-8 bg-white/5 rounded-xl border border-keyline-cyan/50 shadow-lux backdrop-blur-sm hover:shadow-cyan transition duration-300">
+                        <div class="text-7xl mb-4">⚙️</div>
+                        <h3 class="text-3xl font-bold text-keyline-cyan mb-2 font-serif-lux" data-lang-key="leader2Role">The Execution Lead</h3>
+                        <p class="text-xl font-medium text-keyline-gold mb-4" data-lang-key="leader2Title">Chief Operating Officer</p>
+                        <p class="text-gray-200 leading-relaxed" data-lang-key="leader2Desc">Responsible for process efficiency, technical implementation of ad campaigns, and ensuring the seamless delivery of all client milestones on schedule and on budget.</p>
+                    </div>
+                    
+                    <!-- Leadership Profile 3: The Creative Director -->
+                    <div class="text-center p-8 bg-white/5 rounded-xl border border-keyline-gold/50 shadow-lux backdrop-blur-sm hover:shadow-gold transition duration-300">
+                        <div class="text-7xl mb-4">🎬</div>
+                        <h3 class="text-3xl font-bold text-keyline-cyan mb-2 font-serif-lux" data-lang-key="leader3Role">The Creative Director</h3>
+                        <p class="text-xl font-medium text-keyline-gold mb-4" data-lang-key="leader3Title">Head of Production</p>
+                        <p class="text-gray-200 leading-relaxed" data-lang-key="leader3Desc">The guardian of aesthetic quality and cultural relevance. Oversees all video production, graphic design, and ensures every asset reflects a premium brand standard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: BENEFITS (Moved up) -->
+        <section id="benefits" class="py-24 md:py-40 px-6 lg:px-8 bg-keyline-navy/5 text-keyline-navy rounded-3xl my-24">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="benefitsTitle">
+                Why Partner With Us?
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-20 max-w-5xl mx-auto" data-lang-key="benefitsSubtitle">
+                Hiring a dedicated digital marketing agency isn't an expense—it's a high-leverage investment that drives efficiency, expertise, and measurable market control.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
+                <!-- Benefit 1: Expert Efficiency -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-gold">
+                    <div class="text-7xl mb-4 text-keyline-navy">⏱️</div>
+                    <h3 class="text-2xl font-bold mb-2 font-serif-lux" data-lang-key="benefit1Title">Instant Expertise & Efficiency</h3>
+                    <p class="text-gray-700" data-lang-key="benefit1Desc">Gain a full team of strategists, content creators, and media buyers immediately. <span class="font-bold">Stop wasting time</span> learning platforms and start seeing professional results.</p>
+                </div>
+                
+                <!-- Benefit 2: Cost-Effective Scaling -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-cyan">
+                    <div class="text-7xl mb-4 text-keyline-navy">💰</div>
+                    <h3 class="text-2xl font-bold mb-2 font-serif-lux" data-lang-key="benefit2Title">Predictable Cost vs. Hiring</h3>
+                    <p class="text-2xl font-normal text-gray-700" data-lang-key="benefit2Desc">A retainer is often significantly <span class="font-bold">less than the salary</span> and overhead of hiring, training, and retaining a full in-house marketing department.</p>
+                </div>
+                
+                <!-- Benefit 3: Focus on Core Business -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-gold">
+                    <div class="text-7xl mb-4 text-keyline-navy">💼</div>
+                    <h3 class="text-2xl font-bold mb-2 font-serif-lux" data-lang-key="benefit3Title">Reclaim Leadership Focus</h3>
+                    <p class="text-gray-700" data-lang-key="benefit3Desc">By outsourcing complex digital operations, key leadership can <span class="font-bold">re-dedicate focus</span> to product development, sales strategy, and client relations.</p>
+                </div>
+
+                <!-- Benefit 4: Market Adaptation -->
+                <div class="text-center p-8 bg-white rounded-xl shadow-lux border-b-4 border-keyline-cyan md:col-span-3">
+                    <div class="text-7xl mb-4 text-keyline-navy">📈</div>
+                    <h3 class="text-2xl font-bold mb-2 font-serif-lux" data-lang-key="benefit4Title">Rapid Market Adaptation & Growth</h3>
+                    <p class="text-gray-700" data-lang-key="benefit4Desc">Digital trends and algorithms change constantly. An agency <span class="font-bold">specializes in immediate adaptation</span>, ensuring your brand remains visible, compliant, and always ahead of the local curve.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 3. Services Section - (The Specific Offering) -->
+        <section id="services" class="py-24 md:py-40 px-6 lg:px-8">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="servicesTitle">
+                The KeyLine Advantage
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-20 max-w-4xl mx-auto" data-lang-key="servicesSubtitle">
+                A streamlined, high-impact service suite focused entirely on nationwide visibility and engagement with high-capacity buyers.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <!-- Service 1: Premier Video Production -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-gold">
+                    <div class="text-6xl text-keyline-navy mb-5 font-extrabold">🎥</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service1Title">Premier Video Production</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service1Desc">Two dedicated, cinematic shooting sessions per week, capturing essential, high-resolution content for quality distribution across all high-value channels.</p>
+                </div>
+
+                <!-- Service 2: Viral Short-Form Content -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-navy">
+                    <div class="text-6xl text-keyline-cyan mb-5 font-extrabold">📱</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service2Title">Viral Short-Form Content</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service2Desc">2-3 highly engaging videos weekly, optimized specifically for platforms like TikTok and Instagram Reels to achieve maximum organic reach and trend status.</p>
+                </div>
+
+                <!-- Service 3: FULL BRANDING -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-gold">
+                    <div class="text-6xl text-keyline-navy mb-5 font-extrabold">⚜️</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service3Title">Full-Spectrum Brand Identity</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service3Desc">We deliver complete brand identity solutions, including <span class="font-bold">color palette, logo design, and essential graphics</span> like banners, flyers, and stickers.</p>
+                </div>
+
+                <!-- Service 4: Precision Paid Advertising -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-navy">
+                    <div class="text-6xl text-keyline-cyan mb-5 font-extrabold">🎯</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service4Title">Precision Paid Advertising</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service4Desc">Strategically managed Facebook and TikTok ad campaigns focused on geographic and demographic precision for high-value B2B and affluent B2C targets.</p>
+                </div>
+
+                <!-- Service 5: Signature Promotional Events -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-gold">
+                    <div class="text-6xl text-keyline-navy mb-5 font-extrabold">🌟</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service5Title">Signature Promotional Events</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service5Desc">Planning and execution of a major, one-time promotion designed for powerful market penetration and lasting community recognition and press coverage.</p>
+                </div>
+                
+                <!-- Service 6: Celebrity Collaborations -->
+                <div class="bg-white p-10 rounded-xl shadow-lux hover:shadow-2xl transition duration-300 border-t-6 border-keyline-navy">
+                    <div class="text-6xl text-keyline-cyan mb-5 font-extrabold">🤝</div>
+                    <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux" data-lang-key="service6Title">Celebrity Collaborations</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed" data-lang-key="service6Desc">Access to a network of high-profile local figures and models to create trending content and amplify brand trust instantly and authentically.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECTION: THE 4-STEP PROVEN PROCESS -->
+        <section id="process" class="py-24 md:py-40 px-6 lg:px-8 bg-white my-24 rounded-3xl shadow-lg">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-navy font-serif-lux" data-lang-key="processTitle">
+                KeyLine's Four-Step Growth Engine
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-20 max-w-5xl mx-auto" data-lang-key="processSubtitle">
+                Our approach is a repeatable, data-driven methodology designed to eliminate guesswork and guarantee strategic market penetration in the Ethiopian context.
+            </p>
+
+            <div class="max-w-6xl mx-auto relative">
+                <!-- Decorative Timeline Line (Hidden on Mobile for cleaner look) -->
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-keyline-cyan/20 rounded-full"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+                    
+                    <!-- Step 1: Strategy & Discovery (Left Column) -->
+                    <div class="relative lg:text-right">
+                        <div class="lg:pr-12">
+                            <span class="text-8xl font-black text-keyline-gold/50 absolute -top-8 right-0 lg:right-0 opacity-80 z-0 hidden lg:block">01</span>
+                            <!-- Icon/Circle for Desktop Timeline -->
+                            <div class="absolute right-[-10px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-keyline-gold rounded-full border-4 border-white shadow-lg hidden lg:block z-10"></div>
+                            
+                            <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux border-b-2 border-keyline-gold/50 inline-block pb-1" data-lang-key="process1Title">1. Strategy & Discovery</h3>
+                            <p class="text-xl text-gray-700 leading-relaxed mt-4" data-lang-key="process1Desc">We conduct a deep dive into your brand's unique value, competitors, and target demographics to build a bespoke content and media buying playbook.</p>
+                            <p class="text-sm font-semibold text-keyline-gold mt-2" data-lang-key="process1Output">Outputs: Comprehensive Market Report, Tailored Content Calendar, Target Profile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Content & Branding Execution (Right Column) -->
+                    <div class="relative lg:mt-24">
+                        <div class="lg:pl-12">
+                            <span class="text-8xl font-black text-keyline-cyan/50 absolute -top-8 left-0 opacity-80 z-0 hidden lg:block">02</span>
+                            <!-- Icon/Circle for Desktop Timeline -->
+                            <div class="absolute left-[-10px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-keyline-cyan rounded-full border-4 border-white shadow-lg hidden lg:block z-10"></div>
+                            
+                            <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux border-b-2 border-keyline-cyan/50 inline-block pb-1" data-lang-key="process2Title">2. Content & Branding Execution</h3>
+                            <p class="text-xl text-gray-700 leading-relaxed mt-4" data-lang-key="process2Desc">Our dedicated in-house team moves into high-quality production, creating cinematic video assets, viral short-form content, and any necessary branding materials (logos, graphics).</p>
+                            <p class="text-sm font-semibold text-keyline-gold mt-2" data-lang-key="process2Output">Outputs: Bi-Weekly Video Shoots, 3x Viral Clips/Week, Finalized Brand Assets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Precision Campaign Launch (Left Column) -->
+                    <div class="relative lg:text-right lg:-mt-24">
+                        <div class="lg:pr-12">
+                            <span class="text-8xl font-black text-keyline-gold/50 absolute -top-8 right-0 lg:right-0 opacity-80 z-0 hidden lg:block">03</span>
+                            <!-- Icon/Circle for Desktop Timeline -->
+                            <div class="absolute right-[-10px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-keyline-gold rounded-full border-4 border-white shadow-lg hidden lg:block z-10"></div>
+                            
+                            <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux border-b-2 border-keyline-gold/50 inline-block pb-1" data-lang-key="process3Title">3. Precision Campaign Launch</h3>
+                            <p class="text-xl text-gray-700 leading-relaxed mt-4" data-lang-key="process3Desc">Assets are deployed through strategically managed channels (TikTok, Facebook, Instagram). We implement geo- and demographic-specific paid targeting to ensure content reaches the highest-value audience.</p>
+                            <p class="text-sm font-semibold text-keyline-gold mt-2" data-lang-key="process3Output">Outputs: Targeted Ad Campaigns, Influencer/Celebrity Collaborations, Event Marketing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Analyze, Optimize, & Scale (Right Column) -->
+                    <div class="relative lg:mt-0">
+                        <div class="lg:pl-12">
+                            <span class="text-8xl font-black text-keyline-cyan/50 absolute -top-8 left-0 opacity-80 z-0 hidden lg:block">04</span>
+                            <!-- Icon/Circle for Desktop Timeline -->
+                            <div class="absolute left-[-10px] top-1/2 transform -translate-y-1/2 w-8 h-8 bg-keyline-cyan rounded-full border-4 border-white shadow-lg hidden lg:block z-10"></div>
+                            
+                            <h3 class="text-3xl font-bold mb-4 text-keyline-navy font-serif-lux border-b-2 border-keyline-cyan/50 inline-block pb-1" data-lang-key="process4Title">4. Analyze, Optimize, & Scale</h3>
+                            <p class="text-xl text-gray-700 leading-relaxed mt-4" data-lang-key="process4Desc">Campaigns are monitored daily. Data is gathered, performance is reviewed weekly, and strategies are continually fine-tuned for maximum conversion and brand authority.</p>
+                            <p class="text-sm font-semibold text-keyline-gold mt-2" data-lang-key="process4Output">Outputs: Weekly Performance Reports, Strategy Iteration, Budget Scaling Recommendations.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="text-center mt-20">
+                <a href="#packages" class="inline-block bg-keyline-cyan hover:bg-keyline-gold text-keyline-navy text-xl font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lux scroll-link" data-lang-key="processCTA">
+                    See Engagement Models
+                </a>
+            </div>
+
+        </section>
+        
+        <!-- 5. NEW SECTION: ENGAGEMENT MODELS (Packages) -->
+        <section id="packages" class="py-24 md:py-40 px-6 lg:px-8 bg-keyline-navy text-white my-24 rounded-3xl shadow-2xl">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="packagesTitle">
+                Engagement Models & Commitment
+            </h2>
+            <p class="text-2xl text-center text-gray-300 mb-20 max-w-5xl mx-auto" data-lang-key="packagesSubtitle">
+                We are a premium, retainer-based partner. Our commitment to high-impact services is reflected in three clear tiers, designed for different stages of national growth.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <!-- Package 1: The Ascent (Foundation) -->
+                <div class="bg-white text-keyline-navy p-10 rounded-xl shadow-2xl border-b-8 border-keyline-gold flex flex-col hover:scale-[1.03] transition duration-300">
+                    <h3 class="text-4xl font-black mb-4 text-keyline-navy font-serif-lux" data-lang-key="pkg1Title">The Ascent</h3>
+                    <p class="text-xl font-bold text-keyline-gold mb-8" data-lang-key="pkg1Subtitle">Rapid Market Entry</p>
+                    <p class="text-lg mb-8 flex-grow" data-lang-key="pkg1Desc">A high-velocity package focused on establishing an immediate, professional digital footprint and validating target markets with strategic paid media tests.</p>
+                    <ul class="space-y-3 text-lg font-medium list-none mb-10">
+                        <li class="flex items-center" data-lang-key="pkg1Feat1"><span class="text-keyline-gold text-2xl mr-3">✓</span> Weekly Content Strategy</li>
+                        <li class="flex items-center" data-lang-key="pkg1Feat2"><span class="text-keyline-gold text-2xl mr-3">✓</span> Basic Cinematic Video (1/week)</li>
+                        <li class="flex items-center" data-lang-key="pkg1Feat3"><span class="text-keyline-gold text-2xl mr-3">✓</span> Short-Form Content (2/week)</li>
+                        <li class="flex items-center" data-lang-key="pkg1Feat4"><span class="text-keyline-gold text-2xl mr-3">✓</span> Dedicated Media Buyer</li>
+                    </ul>
+                    <a href="#contact" class="bg-keyline-cyan text-keyline-navy font-bold py-4 rounded-lg text-center hover:bg-keyline-gold transition duration-300" data-lang-key="pkgCTA1">Inquire for Pricing</a>
+                </div>
+                
+                <!-- Package 2: The Apex (Flagship - Recommended) -->
+                <div class="bg-white text-keyline-navy p-10 rounded-xl shadow-2xl border-b-8 border-keyline-cyan flex flex-col transform scale-100 lg:scale-[1.05] border-keyline-gold hover:scale-[1.06] transition duration-300">
+                    <div class="text-center mb-4"><span class="inline-block bg-keyline-gold text-keyline-navy text-sm font-bold px-3 py-1 rounded-full uppercase" data-lang-key="pkgRecommended">Most Popular</span></div>
+                    <h3 class="text-4xl font-black mb-4 text-keyline-navy font-serif-lux" data-lang-key="pkg2Title">The Apex</h3>
+                    <p class="text-xl font-bold text-keyline-cyan mb-8" data-lang-key="pkg2Subtitle">Dominant Market Position</p>
+                    <p class="text-lg mb-8 flex-grow" data-lang-key="pkg2Desc">Our full-service, flagship model, combining elite content production with influencer access and advanced performance scaling for decisive market control.</p>
+                    <ul class="space-y-3 text-lg font-medium list-none mb-10">
+                        <li class="flex items-center" data-lang-key="pkg2Feat1"><span class="text-keyline-cyan text-2xl mr-3">★</span> Comprehensive Strategy & Reporting</li>
+                        <li class="flex items-center" data-lang-key="pkg2Feat2"><span class="text-keyline-cyan text-2xl mr-3">★</span> Premier Cinematic Video (2/week)</li>
+                        <li class="flex items-center" data-lang-key="pkg2Feat3"><span class="text-keyline-cyan text-2xl mr-3">★</span> **Full Brand Identity Suite**</li>
+                        <li class="flex items-center" data-lang-key="pkg2Feat4"><span class="text-keyline-cyan text-2xl mr-3">★</span> Exclusive Local Celebrity Network Access</li>
+                        <li class="flex items-center" data-lang-key="pkg2Feat5"><span class="text-keyline-cyan text-2xl mr-3">★</span> Priority Support & Optimization</li>
+                    </ul>
+                    <a href="#contact" class="bg-keyline-gold text-keyline-navy font-bold py-4 rounded-lg text-center hover:bg-keyline-cyan transition duration-300" data-lang-key="pkgCTA2">Start Dominating</a>
+                </div>
+                
+                <!-- Package 3: The Enterprise (Custom) -->
+                <div class="bg-white text-keyline-navy p-10 rounded-xl shadow-2xl border-b-8 border-keyline-gold flex flex-col hover:scale-[1.03] transition duration-300">
+                    <h3 class="text-4xl font-black mb-4 text-keyline-navy font-serif-lux" data-lang-key="pkg3Title">The Enterprise</h3>
+                    <p class="text-xl font-bold text-keyline-gold mb-8" data-lang-key="pkg3Subtitle">Custom National Scaling</p>
+                    <p class="text-lg mb-8 flex-grow" data-lang-key="pkg3Desc">For multi-division companies or corporations requiring specialized resources, multi-city deployment, and integrated PR/event management.</p>
+                    <ul class="space-y-3 text-lg font-medium list-none mb-10">
+                        <li class="flex items-center" data-lang-key="pkg3Feat1"><span class="text-keyline-gold text-2xl mr-3">✓</span> Dedicated Account Director</li>
+                        <li class="flex items-center" data-lang-key="pkg3Feat2"><span class="text-keyline-gold text-2xl mr-3">✓</span> Multi-Channel Strategy (4+ Platforms)</li>
+                        <li class="flex items-center" data-lang-key="pkg3Feat3"><span class="text-keyline-gold text-2xl mr-3">✓</span> Signature Promotional Event (Annual)</li>
+                        <li class="flex items-center" data-lang-key="pkg3Feat4"><span class="text-keyline-gold text-2xl mr-3">✓</span> Custom Resource Allocation</li>
+                    </ul>
+                    <a href="#contact" class="bg-keyline-cyan text-keyline-navy font-bold py-4 rounded-lg text-center hover:bg-keyline-gold transition duration-300" data-lang-key="pkgCTA3">Discuss Custom Solutions</a>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <!-- 6. Client Portfolio Section -->
+        <section id="clients" class="py-24 md:py-40 px-6 lg:px-8 bg-white rounded-xl my-24 shadow-inner">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="portfolioTitle">
+                The KeyLine Portfolio
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-16 max-w-5xl mx-auto" data-lang-key="portfolioSubtitle">
+                Demonstrated success across Ethiopia’s most critical and visible sectors, managing both specialized B2B and high-traffic B2C campaigns.
+            </p>
+
+            <!-- B2B Case Study -->
+            <div class="max-w-6xl mx-auto mb-20">
+                <div class="bg-keyline-navy p-10 rounded-xl shadow-2xl border-b-8 border-keyline-gold transform hover:scale-[1.01] transition duration-300">
+                    <h4 class="text-4xl font-bold text-white mb-6 border-b border-white/20 pb-4 font-serif-lux" data-lang-key="b2bCaseTitle">Industrial & Trade: B2B Mastery</h4>
+                    <p class="text-gray-300 text-xl mb-8" data-lang-key="b2bCaseDesc">
+                        <span class="font-bold">Key Case Study: Zelalem Import Export</span>. Our focus: translating complex technical excellence into nationwide authority to attract high-capacity partners.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-6 text-lg">
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat1">⚙️ Industry Machines</p>
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat2">🚜 Agricultural Machineries</p>
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat3">💡 Solar & Electric Materials</p>
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat4">🧪 Water & Laboratory Supplies</p>
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat5">🚚 Commercial Vehicles</p>
+                        <p class="font-semibold text-keyline-gold" data-lang-key="b2bFeat6">🔧 After-Sales Technical Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B2C CLIENT SHOWCASE GRID -->
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold text-keyline-navy text-center mb-12 font-serif-lux border-b-2 pb-4" data-lang-key="b2cShowcaseTitle">
+                    Consumer & Retail: B2C Visibility Showcase
+                </h3>
+                
+                <!-- Note: The B2C client descriptions were not translated as they are specific client names and descriptions. If you need the descriptions translated, please let me know which key elements to focus on! -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-cyan hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Alex Lounge</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c1Tag">Hospitality & Nightlife</p>
+                        <p class="text-gray-700" data-lang-key="c1Desc">We managed campaign creation and celebrity appearances, dramatically boosting weekend attendance and establishing them as a premier destination in the capital.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-gold hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Beki Mobiles</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c2Tag">Electronics Retail</p>
+                        <p class="text-gray-700" data-lang-key="c2Desc">Our strategy centered on engaging product review videos and trust-building content, resulting in a measurable increase in high-end mobile device sales volume.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-cyan hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Vintage Coffee</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c3Tag">Specialty Coffee</p>
+                        <p class="text-gray-700" data-lang-key="c3Desc">Executed a compelling short-form series showcasing the unique bean process and cafe atmosphere, successfully cultivating a younger, high-spending demographic.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-gold hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Mac Coffee</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c4Tag">Cafe Chain</p>
+                        <p class="text-gray-700" data-lang-key="c4Desc">Focused on local influencer outreach and geo-targeted ads to drive foot traffic to new branch locations, ensuring quick market penetration for their expansion strategy.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-cyan hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Endalk Mens Barber House</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c5Tag">Personal Services</p>
+                        <p class="text-gray-700" data-lang-key="c5Desc">We transformed their digital presence with sleek, high-quality style videos, positioning them as the market leader for luxury male grooming services.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-gold hover:shadow-xl transition duration-300">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Beamen Curtain</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c6Tag">Home Furnishings</p>
+                        <p class="text-gray-700" data-lang-key="c6Desc">Created stunning visual content that highlighted the quality and design of their custom window treatments, generating high-value leads from interior designers and homeowners.</p>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 rounded-xl shadow-lux border-l-4 border-keyline-cyan hover:shadow-xl transition duration-300 lg:col-span-full md:col-span-2">
+                        <h4 class="text-2xl font-bold text-keyline-navy mb-2 font-serif-lux">Rosemary Cooking School</h4>
+                        <p class="text-sm text-keyline-gold mb-4" data-lang-key="c7Tag">Education & Lifestyle</p>
+                        <p class="text-gray-700" data-lang-key="c7Desc">Managed a successful enrollment campaign using live video demonstrations and testimonials, resulting in sold-out sessions for their professional culinary programs.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SECTION: TESTIMONIALS / SOCIAL PROOF -->
+        <section id="testimonials" class="py-24 md:py-40 px-6 lg:px-8 bg-keyline-cyan/10 rounded-3xl my-24 shadow-inner">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-navy font-serif-lux" data-lang-key="testimonialsTitle">
+                Client Success Stories
+            </h2>
+            <p class="text-2xl text-center text-gray-700 mb-20 max-w-5xl mx-auto" data-lang-key="testimonialsSubtitle">
+                Direct evidence of our impact across Ethiopia’s most dynamic industries, shared by the leadership we serve.
+            </p>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                
+                <div class="bg-white p-8 rounded-xl shadow-lux border-t-8 border-keyline-gold flex flex-col justify-between hover:shadow-2xl transition duration-300">
+                    <blockquote class="text-lg italic text-gray-700 leading-loose mb-6" data-lang-key="t1Quote">
+                        "The quality of the video assets alone justified the investment. We moved from generic digital posts to cinematic content that immediately set us apart from every competitor. Our B2B inquiries have never been more qualified."
+                    </blockquote>
+                    <div>
+                        <p class="font-bold text-keyline-navy text-xl" data-lang-key="t1AuthorRole">— CEO</p>
+                        <p class="text-keyline-gold font-medium" data-lang-key="t1AuthorCompany">Zelalem Import Export</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lux border-t-8 border-keyline-cyan flex flex-col justify-between hover:shadow-2xl transition duration-300">
+                    <blockquote class="text-lg italic text-gray-700 leading-loose mb-6" data-lang-key="t2Quote">
+                        "They understand 'viral' without sacrificing class. The celebrity collaborations and event promotion they executed were flawless, bringing in a record number of high-profile customers to the lounge."
+                    </blockquote>
+                    <div>
+                        <p class="font-bold text-keyline-navy text-xl" data-lang-key="t2AuthorRole">— Marketing Director</p>
+                        <p class="text-keyline-gold font-medium" data-lang-key="t2AuthorCompany">Alex Lounge</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lux border-t-8 border-keyline-gold flex flex-col justify-between hover:shadow-2xl transition duration-300">
+                    <blockquote class="text-lg italic text-gray-700 leading-loose mb-6" data-lang-key="t3Quote">
+                        "KeyLine built our brand identity from scratch, and it's spectacular. Everything from the logo to the Facebook ads now looks integrated and premium. We finally look as professional as our products are."
+                    </blockquote>
+                    <div>
+                        <p class="font-bold text-keyline-navy text-xl" data-lang-key="t3AuthorRole">— Proprietor</p>
+                        <p class="text-keyline-gold font-medium" data-lang-key="t3AuthorCompany">Beki Mobiles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 8. NEW SECTION: FREQUENTLY ASKED QUESTIONS (FAQ) -->
+        <section id="faq" class="py-24 md:py-40 px-6 lg:px-8 bg-keyline-navy/5 my-24 rounded-3xl shadow-lg">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-navy font-serif-lux" data-lang-key="faqTitle">
+                Frequently Asked Questions
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-16 max-w-5xl mx-auto" data-lang-key="faqSubtitle">
+                Clear answers to common questions about our partnership model and delivery.
+            </p>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <!-- FAQ Item 1 -->
+                <div class="p-6 bg-white rounded-xl shadow-lux border-l-4 border-keyline-gold">
+                    <h4 class="text-xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="faq1Q">What is the typical minimum contract length?</h4>
+                    <p class="text-gray-700" data-lang-key="faq1A">We require a minimum commitment of <span class="font-bold">three months</span>. This duration is necessary to complete the Discovery phase, execute the campaign launch, and gather sufficient data for meaningful optimization and scale. We don't do short-term testing.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="p-6 bg-white rounded-xl shadow-lux border-l-4 border-keyline-cyan">
+                    <h4 class="text-xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="faq2Q">Do you only work in Hawassa, or nationwide?</h4>
+                    <p class="text-gray-700" data-lang-key="faq2A">Our headquarters are in Hawassa, but our <span class="font-bold">strategic reach is nationwide</span>. We manage digital campaigns targeted at any major city or region in Ethiopia, and our production team can travel for essential cinematic shoots.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="p-6 bg-white rounded-xl shadow-lux border-l-4 border-keyline-gold">
+                    <h4 class="text-xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="faq3Q">Who owns the creative assets (videos, graphics)?</h4>
+                    <p class="text-gray-700" data-lang-key="faq3A">Upon successful completion of the agreed-upon contract term, <span class="font-bold">your company retains full ownership and licensing rights</span> to all creative assets produced on your behalf.</p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="p-6 bg-white rounded-xl shadow-lux border-l-4 border-keyline-cyan">
+                    <h4 class="text-xl font-bold text-keyline-navy mb-2 font-serif-lux" data-lang-key="faq4Q">How do we track performance?</h4>
+                    <p class="text-gray-700" data-lang-key="faq4A">We provide <span class="font-bold">weekly performance reports</span> that focus on key metrics such as ROI, lead quality, and brand reach, presented in a concise dashboard view. We hold monthly strategy review meetings.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA and Awareness Goal - Dramatic Padding -->
+        <section class="py-24 md:py-48 px-6 lg:px-8">
+            <div class="bg-hero-gradient text-white p-16 rounded-xl text-center shadow-2xl border border-keyline-gold/50">
+                <p class="text-4xl md:text-6xl font-black mb-6 font-serif-lux" data-lang-key="goalTitle">
+                    Our Core Mission: 
+                    <span class="text-keyline-gold">95% Brand Authority</span>
+                </p>
+                <p class="text-xl md:text-3xl font-light mb-10 max-w-5xl mx-auto opacity-80" data-lang-key="goalSubtitle">
+                    We build a reputation across the community and key national demographics that precedes every sales opportunity. We are selling awareness, not just clicks.
+                </p>
+                <a href="#contact" class="inline-block bg-gold-cta hover:opacity-90 text-keyline-navy text-xl font-bold py-5 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-gold shadow-2xl scroll-link" data-lang-key="goalCTA">
+                    Schedule Your Consultation
+                </a>
+            </div>
+        </section>
+
+        <!-- 9. Contact Section - (Conversion) -->
+        <section id="contact" class="py-24 md:py-40 px-6 lg:px-8 bg-white rounded-t-[60px] border-t-6 border-keyline-gold/50">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-center mb-6 text-keyline-gold font-serif-lux" data-lang-key="contactTitle">
+                Connect with KeyLine
+            </h2>
+            <p class="text-2xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-lang-key="contactSubtitle">
+                Ready to elevate your organization? Fill out the form or visit our Hawassa headquarters.
+            </p>
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Column 1: Contact Information and Location -->
+                <div class="p-10 md:p-12 bg-keyline-navy text-white rounded-xl shadow-2xl flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-keyline-gold mb-6 font-serif-lux border-b border-keyline-gold/50 pb-3" data-lang-key="hqTitle">Hawassa Headquarters</h3>
+                    
+                    <!-- Address -->
+                    <div class="mb-8">
+                        <p class="text-xl font-semibold text-keyline-cyan mb-2" data-lang-key="hqAddressLabel">Physical Location</p>
+                        <p class="text-lg opacity-90 leading-relaxed" data-lang-key="hqAddress">
+                            Piassa, Abyssinia Bank Building, 3rd Floor, <br> 
+                            Hawassa, Ethiopia
+                        </p>
+                    </div>
+
+                    <!-- Phone & Email -->
+                    <div class="mb-8">
+                        <p class="text-xl font-semibold text-keyline-cyan mb-2" data-lang-key="contactLabel">Direct Contact</p>
+                        <p class="text-lg opacity-90">
+                            <span class="font-bold" data-lang-key="contactPhoneLabel">Phones:</span> 
+                            <a href="tel:+251916960847" class="hover:text-keyline-gold">+251 916 960 847</a> / 
+                            <a href="tel:+251916227041" class="hover:text-keyline-gold">+251 916 227 041</a> /
+                            <a href="tel:+251921020530" class="hover:text-keyline-gold">+251 921 020 530</a><br>
+                            <span class="font-bold" data-lang-key="contactEmailLabel">Email:</span> <a href="mailto:keylinemarketing@gmail.com" class="hover:text-keyline-gold">keylinemarketing@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="mb-0">
+                        <p class="text-xl font-semibold text-keyline-cyan mb-2" data-lang-key="hoursLabel">Office Hours</p>
+                        <p class="text-lg opacity-90" data-lang-key="hoursDetail">
+                            <span class="font-bold">Monday - Sunday:</span> 8:00 AM – 6:00 PM (EAT)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Inquiry Form -->
+                <div class="p-10 md:p-12 rounded-xl shadow-lux border border-keyline-navy/10 bg-white">
+                    <form onsubmit="handleContactForm(event)">
+                        <div class="mb-6">
+                            <label for="name" class="block text-lg font-medium text-keyline-navy mb-3" data-lang-key="formName">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-keyline-gold focus:border-keyline-gold transition duration-150">
+                        </div>
+                        <div class="mb-6">
+                            <label for="organization" class="block text-lg font-medium text-keyline-navy mb-3" data-lang-key="formOrg">Organization</label>
+                            <input type="text" id="organization" name="organization" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-keyline-gold focus:border-keyline-gold transition duration-150">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-lg font-medium text-keyline-navy mb-3" data-lang-key="formEmail">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-keyline-gold focus:border-keyline-gold transition duration-150">
+                        </div>
+                        <div class="mb-8">
+                            <label for="message" class="block text-lg font-medium text-keyline-navy mb-3" data-lang-key="formBrief">Project Brief</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full p-4 border border-gray-300 rounded-lg focus:ring-keyline-gold focus:border-keyline-gold transition duration-150"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-keyline-navy hover:bg-gold-cta text-white hover:text-keyline-navy font-bold text-xl py-5 rounded-lg transition duration-300 shadow-xl" data-lang-key="formSendCTA">
+                            Send Secure Inquiry
+                        </button>
+                        <div id="statusMessage" class="mt-6 text-center hidden p-4 rounded-lg font-semibold border text-lg" data-lang-key="formStatusEN"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Navy Gradient Background with Gold Accent -->
+    <footer class="bg-hero-gradient py-16 mt-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
+            <div class="mb-4">
+                <span class="text-4xl font-black text-white font-serif-lux" data-lang-key="logoTitleFooter">KeyLine<span class="text-keyline-gold">.</span></span>
+            </div>
+            <p class="text-base mb-2 opacity-80" data-lang-key="footerCopyright">&copy; 2025 KeyLine Marketing and Advert. All rights reserved.</p>
+            <p class="text-base font-semibold text-keyline-gold" data-lang-key="footerSlogan">Driven by Strategy. Defined by Results. Your growth, accelerated.</p>
+            
+            <!-- Location added to the Footer -->
+            <div class="mt-8 pt-4 border-t border-white/10">
+                <p class="text-lg font-bold text-keyline-gold mb-2" data-lang-key="footerOfficeTitle">Hawassa Office</p>
+                <p class="text-base opacity-80" data-lang-key="footerOfficeAddress">Piassa, Abyssinia Bank Building, 3rd Floor, Hawassa, Ethiopia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Menu, Form Submission Message, and Language Switching -->
+    <script>
+        // --- LANGUAGE SWITCHING DATA ---
+        // Contains all Amharic (AM) translations for the site.
+        const translations = {
+            am: {
+                // Global/Titles
+                pageTitle: "ቁልፍ መስመር ማርኬቲንግ | የቅንጦት ዲጂታል ዕድገት አጋር",
+                logoTitle: "ቁልፍ መስመር<span class='text-keyline-gold'>.</span>",
+                logoTitleFooter: "ቁልፍ መስመር<span class='text-keyline-gold'>.</span>",
+
+                // Navigation
+                navHome: "ዋና ገጽ",
+                navAbout: "ስለ እኛ",
+                navServices: "አገልግሎቶች",
+                navProcess: "የሥራ ሂደት",
+                navEngagement: "የአጋርነት ሞዴል",
+                navPortfolio: "የሥራ ውጤቶች",
+                navTestimonials: "የደንበኛ አስተያየት",
+                navFAQ: "ተደጋጋሚ ጥያቄዎች",
+                navContactCTA: "ያግኙን",
+
+                // Hero Section
+                heroTitle: "የኢትዮጵያ <span class='text-keyline-gold'>ብራንዶችን</span> ማሳደግ",
+                heroSubtitle: "ለከፍተኛ ዋጋ ላላቸው የኢንዱስትሪ እና ተለዋዋጭ የፍጆታ ዘርፎች ብቸኛ ስትራቴጂያዊ አጋር፣ ተወዳዳሪ የማይገኝለት ዲጂታል ግንዛቤ እና የገበያ የበላይነትን ማሽከርከር።",
+                heroCTA: "ራዕያችንን ያግኙ",
+
+                // About Section
+                aboutPillarsTitle: "የአጋርነት ምሰሶዎች",
+                aboutPillarsSubtitle: "ኤጀንሲያችን የሚሰራው በስትራቴጂያዊ ታማኝነት መሠረት ላይ ነው፣ እያንዳንዱ ዘመቻ ለዘላቂ ዕድገት እና ሊለካ የሚችል ልህቀትን እንዲገነባ ያረጋግጣል።",
+                pillar1Title: "መለኪያዎች ይቀድማሉ",
+                pillar1Desc: "ሁሉም ስትራቴጂዎች የሚመነጩት እና የሚለኩት ግልጽ፣ በትርፍ ላይ ባተኮሩ መለኪያዎች እንጂ በዕይታ ቁጥሮች አይደለም።",
+                pillar2Title: "የደንበኛ ምስጢራዊነት",
+                pillar2Desc: "የእርስዎ የንግድ መረጃ ፍፁም ሚስጥራዊነት እና ጥበቃ።",
+                pillar3Title: "የፈጠራ ፍጥነት",
+                pillar3Desc: "አዝማሚያዎችን ለመቆጣጠር እና ተገቢነትን ለመጠበቅ ከፍተኛ ፍጥነት ያለው የይዘት ምርት ዑደት።",
+                pillar4Title: "በኢትዮጵያ ላይ ትኩረት",
+                pillar4Desc: "ጥልቅ የአካባቢ ገበያ ግንዛቤ እና ለኢትዮጵያ ገበያ የተበጀ ስትራቴጂ።",
+
+                // Leadership
+                leadershipTitle: "የእድገት መሃንዲሶች",
+                leadershipSubtitle: "ቁልፍ መስመር (KeyLine) በኢትዮጵያ ውስጥ ባህላዊ ክብርን እና ዘመናዊ ዲጂታል አፈፃፀምን ክፍተት ለመድፈን ተመሠረተ። ስኬትዎን የሚመራውን አመራር ያግኙ።",
+                leader1Role: "ራዕይ ፈጣሪው",
+                leader1Title: "ማኔጂንግ አጋር",
+                leader1Desc: "በዓለም አቀፍ ዲጂታል አዝማሚያዎች፣ በማክሮ ኢኮኖሚክስ እና በረዥም ጊዜ ብራንድ አቀማመጥ ላይ ያተኩራል። የእኛ ስልቶች ወቅታዊ ብቻ ሳይሆኑ ትንበያ ሰጪዎች መሆናቸውን ያረጋግጣል።",
+                leader2Role: "የአፈፃፀም መሪ",
+                leader2Title: "ዋና ኦፕሬቲንግ ኦፊሰር",
+                leader2Desc: "ለሂደት ቅልጥፍና፣ የማስታወቂያ ዘመቻዎች ቴክኒካዊ አተገባበር እና የሁሉም የደንበኛ ምዕራፎች በሰዓቱ እና በበጀት መድረስ ኃላፊነት አለበት።",
+                leader3Role: "የፈጠራ ዳይሬክተር",
+                leader3Title: "የምርት ኃላፊ",
+                leader3Desc: "የውበት ጥራት እና ባህላዊ አግባብ ጠባቂ። ሁሉንም የቪዲዮ ምርቶች፣ ግራፊክ ዲዛይን የሚቆጣጠር እና እያንዳንዱ ንብረት የፕሪሚየም ብራንድ ደረጃን የሚያንፀባርቅ መሆኑን ያረጋግጣል።",
+
+                // Benefits
+                benefitsTitle: "ለምን ከእኛ ጋር ይሰራሉ?",
+                benefitsSubtitle: "የዲጂታል ማርኬቲንግ ኤጀንሲ መቅጠር ወጪ አይደለም—ቅልጥፍናን፣ ሙያዊነትን እና ሊለካ የሚችል የገበያ ቁጥጥርን የሚያመጣ ከፍተኛ ጥቅም ያለው ኢንቨስትመንት ነው።",
+                benefit1Title: "ፈጣን ሙያዊነት እና ቅልጥፍና",
+                benefit1Desc: "የሙሉ ስትራቴጂስቶች፣ የይዘት ፈጣሪዎች እና የሚዲያ ገዢዎች ቡድን ወዲያውኑ ያግኙ። <span class='font-bold'>መድረኮችን በመማር ጊዜ ማባከን ያቁሙ</span> እና ሙያዊ ውጤቶችን ማየት ይጀምሩ።",
+                benefit2Title: "ሊገመት የሚችል ወጪ",
+                benefit2Desc: "አንድ ኤጀንሲ ለአንድ አመት መቅጠር ሙሉ የውስጥ የማርኬቲንግ ዲፓርትመንት ከመቅጠር፣ ከማሰልጠን እና ከማቆየት ደመወዝ እና የሥራ ማስኬጃ ወጪ በእጅጉ <span class='font-bold'>ያነሰ</span> ነው።",
+                benefit3Title: "በዋናው ንግድ ላይ ማተኮር",
+                benefit3Desc: "ውስብስብ ዲጂታል ስራዎችን ለሌላ በማስረከብ፣ ቁልፍ አመራር ትኩረቱን ወደ ምርት ልማት፣ የሽያጭ ስትራቴጂ እና የደንበኞች ግንኙነት <span class='font-bold'>እንደገና ማዞር</span> ይችላል።",
+                benefit4Title: "ፈጣን የገበያ ማስተካከያ እና ዕድገት",
+                benefit4Desc: "ዲጂታል አዝማሚያዎች እና ስልተ ቀመሮች ያለማቋረጥ ይለወጣሉ። አንድ ኤጀንሲ <span class='font-bold'>በፈጣን ማስተካከያ ላይ ልዩ</span> ሙያ ያለው ሲሆን፣ ብራንድዎ ሁልጊዜ ታይነት ያለው፣ ተገዢ እና ከአካባቢው አዝማሚያዎች በፊት መሆኑን ያረጋግጣል።",
+                
+                // Services Section
+                servicesTitle: "የቁልፍ መስመር ጥቅም",
+                servicesSubtitle: "በአገር አቀፍ ደረጃ ታይነት እና ከፍተኛ አቅም ካላቸው ገዢዎች ጋር በመሳተፍ ላይ ብቻ ያተኮረ ቀልጣፋ፣ ከፍተኛ ተጽዕኖ ያለው የአገልግሎት ስብስብ።",
+                service1Title: "ዋና የቪዲዮ ምርት",
+                service1Desc: "በሳምንት ሁለት የተሰጡ፣ ሲኒማቲክ የቀረጻ ክፍለ ጊዜዎች፣ ለጥራት ስርጭት አስፈላጊ የሆኑ፣ ከፍተኛ ጥራት ያላቸውን ይዘቶች የሚይዝ።",
+                service2Title: "ቫይራል አጭር ፎርም ይዘት",
+                service2Desc: "በየሳምንቱ 2-3 ከፍተኛ ተሳትፎ ያላቸው ቪዲዮዎች፣ ለቲክቶክ እና ኢንስታግራም ሪልስ ከፍተኛውን ኦርጋኒክ ተደራሽነት እና የአዝማሚያ ደረጃን ለማግኘት የተመቻቹ።",
+                service3Title: "ሙሉ ብራንድ ማንነት",
+                service3Desc: "የ<span class='font-bold'>ቀለም ቤተ-ስዕል፣ አርማ ዲዛይን እና አስፈላጊ ግራፊክስ</span> እንደ ባነር፣ በራሪ ወረቀቶች እና ተለጣፊዎች ጨምሮ የተሟላ የብራንድ ማንነት መፍትሄዎችን እናቀርባለን።",
+                service4Title: "ትክክለኛ የተከፈለ ማስታወቂያ",
+                service4Desc: "ለከፍተኛ ዋጋ ላላቸው B2B እና ሀብታም B2C ኢላማዎች በጂኦግራፊያዊ እና በስነ-ሕዝብ ትክክለኛነት ላይ ያተኮሩ ስትራቴጂያዊ የተቆጣጠሩ የፌስቡክ እና ቲክቶክ ማስታወቂያ ዘመቻዎች።",
+                service5Title: "ፊርማ የማስተዋወቂያ ዝግጅቶች",
+                service5Desc: "ለኃይለኛ የገበያ ዘልቆ መግባት እና ዘላቂ የማህበረሰብ እውቅና እና የፕሬስ ሽፋን የተነደፈ ትልቅ፣ የአንድ ጊዜ ማስተዋወቂያ ማቀድ እና አፈፃፀም።",
+                service6Title: "ታዋቂ ሰዎች ትብብር",
+                service6Desc: "አዝማሚያ የሚፈጥሩ ይዘቶችን ለመፍጠር እና የብራንድ እምነትን በፍጥነት እና በእውነት ለማሳደግ ከታዋቂ የአካባቢ ሰዎች እና ሞዴሎች አውታረመረብ ጋር መስራት።",
+
+                // Process Section
+                processTitle: "የቁልፍ መስመር አራት-ደረጃ የእድገት ሞተር",
+                processSubtitle: "የእኛ አካሄድ ግምትን ለማስወገድ እና በኢትዮጵያ አውድ ውስጥ ስልታዊ የገበያ ዘልቆ መግባትን ለማረጋገጥ የተነደፈ ተደጋጋሚ፣ በዳታ የተደገፈ ዘዴ ነው።",
+                process1Title: "1. ስትራቴጂ እና ግኝት",
+                process1Desc: "የብራንድዎን ልዩ ዋጋ፣ ተወዳዳሪዎችን እና የታለሙ ስነ-ሕዝብን በጥልቀት በመመርመር የተበጀ የይዘት እና የሚዲያ ግዥ ስትራቴጂ እንገነባለን።",
+                process1Output: "ውጤቶች፡ አጠቃላይ የገበያ ሪፖርት፣ የተዘጋጀ የይዘት አቆጣጠር፣ የታለመ መገለጫ።",
+                process2Title: "2. ይዘት እና ብራንዲንግ አፈፃፀም",
+                process2Desc: "የእኛ የውስጥ ቡድን ከፍተኛ ጥራት ባለው ምርት ውስጥ ይገባል፣ ሲኒማቲክ የቪዲዮ ንብረቶችን፣ ቫይራል አጭር ፎርም ይዘትን እና አስፈላጊ የብራንዲንግ ቁሳቁሶችን (አርማዎች፣ ግራፊክስ) ይፈጥራል።",
+                process2Output: "ውጤቶች፡ በሳምንት ሁለት ጊዜ የቪዲዮ ቀረጻዎች፣ በሳምንት 3x ቫይራል ክሊፖች፣ የመጨረሻ የብራንድ ንብረቶች።",
+                process3Title: "3. ትክክለኛ የዘመቻ ጅምር",
+                process3Desc: "ንብረቶች በስትራቴጂያዊ በተቆጣጠሩ ቻናሎች (TikTok፣ Facebook፣ Instagram) ይተላለፋሉ። ይዘት ከፍተኛ ዋጋ ላለው ታዳሚ መድረሱን ለማረጋገጥ ጂኦ- እና ስነ-ሕዝብ-ተኮር የተከፈለ ኢላማን እንተገብራለን።",
+                process3Output: "ውጤቶች፡ የታለሙ የማስታወቂያ ዘመቻዎች፣ ተፅዕኖ ፈጣሪ/ታዋቂ ሰዎች ትብብር፣ የዝግጅት ማሻሻጥ።",
+                process4Title: "4. ትንተና፣ ማመቻቸት እና ማስፋፋት",
+                process4Desc: "ዘመቻዎች በየቀኑ ቁጥጥር ይደረግባቸዋል። መረጃ ይሰበሰባል፣ አፈፃፀሙ በየሳምንቱ ይገመገማል፣ እና ስልቶች ለከፍተኛ ልወጣ እና የብራንድ ባለስልጣንነት ያለማቋረጥ ይስተካከላሉ።",
+                process4Output: "ውጤቶች፡ ሳምንታዊ የአፈፃፀም ሪፖርቶች፣ የስትራቴጂ ማስተካከያ፣ የበጀት ማስፋፋት ምክሮች።",
+                processCTA: "የአጋርነት ሞዴሎችን ይመልከቱ",
+
+                // Packages Section
+                packagesTitle: "የአጋርነት ሞዴሎች እና ቁርጠኝነት",
+                packagesSubtitle: "እኛ ፕሪሚየም፣ በክፍያ ላይ የተመሰረተ አጋር ነን። ለከፍተኛ ተጽዕኖ አገልግሎቶች ያለን ቁርጠኝነት ለተለያዩ የብሔራዊ ዕድገት ደረጃዎች በተዘጋጁ በሦስት ግልጽ ደረጃዎች ይንጸባረቃል።",
+                pkg1Title: "ዕርገቱ",
+                pkg1Subtitle: "ፈጣን የገበያ መግቢያ",
+                pkg1Desc: "በአስቸኳይ፣ ሙያዊ ዲጂታል አሻራ በማቋቋም እና በስትራቴጂያዊ የተከፈለ የሚዲያ ሙከራዎችን የታለሙ ገበያዎችን በማረጋገጥ ላይ ያተኮረ ከፍተኛ ፍጥነት ያለው ጥቅል።",
+                pkg1Feat1: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> ሳምንታዊ የይዘት ስትራቴጂ",
+                pkg1Feat2: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> መሰረታዊ ሲኒማቲክ ቪዲዮ (በሳምንት 1)",
+                pkg1Feat3: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> አጭር ፎርም ይዘት (በሳምንት 2)",
+                pkg1Feat4: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> የተሰጠ የሚዲያ ገዢ",
+                pkgCTA1: "ዋጋ ይጠይቁ",
+
+                pkgRecommended: "በጣም ተፈላጊ",
+                pkg2Title: "ቁንጮው",
+                pkg2Subtitle: "አውራ የገበያ አቋም",
+                pkg2Desc: "የእኛ ሙሉ አገልግሎት፣ ባንዲራ ሞዴል፣ የላቀ የይዘት ምርትን ከተፅዕኖ ፈጣሪዎች ተደራሽነት እና የላቀ የአፈፃፀም ማስፋፋትን በማጣመር ለገበያ ቁጥጥር።",
+                pkg2Feat1: "<span class='text-keyline-cyan text-2xl mr-3'>★</span> አጠቃላይ ስትራቴጂ እና ሪፖርት",
+                pkg2Feat2: "<span class='text-keyline-cyan text-2xl mr-3'>★</span> ዋና ሲኒማቲክ ቪዲዮ (በሳምንት 2)",
+                pkg2Feat3: "<span class='text-keyline-cyan text-2xl mr-3'>★</span> **ሙሉ የብራንድ ማንነት ስብስብ**",
+                pkg2Feat4: "<span class='text-keyline-cyan text-2xl mr-3'>★</span> ልዩ የአካባቢ ታዋቂ ሰዎች አውታረመረብ መዳረሻ",
+                pkg2Feat5: "<span class='text-keyline-cyan text-2xl mr-3'>★</span> ቅድሚያ ድጋፍ እና ማመቻቸት",
+                pkgCTA2: "መቆጣጠር ይጀምሩ",
+
+                pkg3Title: "ድርጅቱ",
+                pkg3Subtitle: "ብጁ ብሔራዊ ማስፋፋት",
+                pkg3Desc: "ልዩ ሀብቶች፣ ባለብዙ ከተማ ማሰማራት እና የተቀናጀ የህዝብ ግንኙነት/ክስተት አስተዳደር ለሚፈልጉ ባለብዙ ክፍል ኩባንያዎች ወይም ኮርፖሬሽኖች።",
+                pkg3Feat1: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> የተሰጠ የሂሳብ ዳይሬክተር",
+                pkg3Feat2: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> ባለብዙ-ቻናል ስትራቴጂ (4+ መድረኮች)",
+                pkg3Feat3: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> ፊርማ የማስተዋወቂያ ክስተት (ዓመታዊ)",
+                pkg3Feat4: "<span class='text-keyline-gold text-2xl mr-3'>✓</span> ብጁ የሀብት ክፍፍል",
+                pkgCTA3: "ብጁ መፍትሄዎችን ተወያዩ",
+
+                // Portfolio Section
+                portfolioTitle: "የቁልፍ መስመር የሥራ ውጤቶች",
+                portfolioSubtitle: "በኢትዮጵያ ወሳኝ እና ታዋቂ ዘርፎች ላይ የተረጋገጠ ስኬት፣ ልዩ የB2B እና ከፍተኛ ትራፊክ የB2C ዘመቻዎችን በማስተዳደር ላይ።",
+                b2bCaseTitle: "ኢንዱስትሪ እና ንግድ፡ የB2B ብልጫ",
+                b2bCaseDesc: "<span class='font-bold'>ቁልፍ የጉዳይ ጥናት፡ ዘለአለም አስመጪና ላኪ</span>። ትኩረታችን፡ ውስብስብ ቴክኒካዊ ብቃትን ወደ አገር አቀፍ ስልጣን በመተርጎም ከፍተኛ አቅም ያላቸውን አጋሮች ለመሳብ ነው።",
+                b2bFeat1: "⚙️ የኢንዱስትሪ ማሽኖች",
+                b2bFeat2: "🚜 የግብርና ማሽነሪዎች",
+                b2bFeat3: "💡 የፀሐይ እና የኤሌክትሪክ እቃዎች",
+                b2bFeat4: "🧪 የውሃ እና የላብራቶሪ አቅርቦቶች",
+                b2bFeat5: "🚚 የንግድ ተሽከርካሪዎች",
+                b2bFeat6: "🔧 ከሽያጭ በኋላ የቴክኒክ ድጋፍ",
+                b2cShowcaseTitle: "ፍጆታ እና ችርቻሮ፡ የB2C ታይነት ማሳያ",
+                
+                // B2C Tags and Descriptions (Shortened and translated)
+                c1Tag: "እንግዳ ተቀባይነት እና መዝናኛ",
+                c1Desc: "የሳምንቱን መጨረሻ ተሳታፊዎችን በከፍተኛ ሁኔታ በማሳደግ እና በአዲስ አበባ ዋና መዳረሻ እንዲሆኑ አድርገናል።",
+                c2Tag: "የኤሌክትሮኒክስ ችርቻሮ",
+                c2Desc: "ስትራቴጂያችን በከፍተኛ ደረጃ የሞባይል መሳሪያዎች ሽያጭ ላይ የሚለካ ጭማሪ አስከትሏል።",
+                c3Tag: "ልዩ ቡና",
+                c3Desc: "በተሳካ ሁኔታ ወጣት፣ ከፍተኛ ወጪ የሚጠይቅ የሕዝብ ቡድን በመፍጠር የካፌውን ድባብ የሚያሳይ አጭር ፎርም ፈጠርን።",
+                c4Tag: "የካፌ ሰንሰለት",
+                c4Desc: "ወደ አዲስ ቅርንጫፎች የእግር ትራፊክን ለመንዳት በጂኦ-ታርጌት ማስታወቂያዎች ላይ አተኩረናል።",
+                c5Tag: "የግል አገልግሎቶች",
+                c5Desc: "በምርጥ የአጻጻፍ ቪዲዮዎች ዲጂታል መገኘታቸውን ቀይረን፣ ለቅንጦት የወንድ የፀጉር አበጣጠር ገበያ መሪ አድርገን አስቀመጥናቸው።",
+                c6Tag: "የቤት እቃዎች",
+                c6Desc: "ከውስጥ ዲዛይነሮች እና የቤት ባለቤቶች ከፍተኛ ዋጋ ያላቸውን እርሳሶች በማመንጨት ብጁ መጋረጃዎቻቸውን ጥራት የሚያጎላ አስደናቂ ይዘት ፈጠርን።",
+                c7Tag: "ትምህርት እና የአኗኗር ዘይቤ",
+                c7Desc: "የባለሙያ የምግብ አሰራር ፕሮግራሞቻቸው ክፍለ ጊዜዎች እንዲሞሉ በማድረግ የተሳካ የምዝገባ ዘመቻን በህይወት ቪዲዮዎች ተጠቅመን አስተዳድረናል።",
+
+                // Testimonials Section
+                testimonialsTitle: "የደንበኛ የስኬት ታሪኮች",
+                testimonialsSubtitle: "እኛ የምናገለግላቸው አመራሮች የተጋሩት፣ በኢትዮጵያ ተለዋዋጭ ኢንዱስትሪዎች ላይ ያለን ተጽዕኖ ቀጥተኛ ማስረጃ።",
+                t1Quote: "“የቪዲዮ ንብረቶቹ ጥራት ብቻ ኢንቨስትመንቱን አረጋግጧል። ከተለመደው ዲጂታል ልጥፎች ወደ ሲኒማቲክ ይዘት ተሸጋገርን። የእኛ B2B ጥያቄዎች በጣም ብቁ ሆነዋል።”",
+                t1AuthorRole: "— ዋና ሥራ አስፈፃሚ",
+                t1AuthorCompany: "ዘለአለም አስመጪና ላኪ",
+                t2Quote: "“ያለ 'ክፍል' ቫይራል መሆንን ተረድተዋል። ያከናወኗቸው የታዋቂ ሰዎች ትብብር እና የዝግጅት ማስተዋወቂያዎች እንከን የለሽ ነበሩ፣ ይህም ለላውንጅው ከፍተኛ ቁጥር ያላቸውን ደንበኞች አስገብተዋል።”",
+                t2AuthorRole: "— የማርኬቲንግ ዳይሬክተር",
+                t2AuthorCompany: "አሌክስ ላውንጅ",
+                t3Quote: "“ቁልፍ መስመር የብራንዴን ማንነት ከባዶ ገንብቶታል፣ እና አስደናቂ ነው። ሁሉም ነገር ከአርማው እስከ ፌስቡክ ማስታወቂያዎች አሁን የተቀናጀ እና ፕሪሚየም ይመስላል።”",
+                t3AuthorRole: "— ባለቤት",
+                t3AuthorCompany: "በቂ ሞባይሎች",
+
+                // FAQ Section
+                faqTitle: "ተደጋጋሚ ጥያቄዎች",
+                faqSubtitle: "ስለ አጋርነት ሞዴላችን እና አቅርቦታችን ለተለመዱ ጥያቄዎች ግልጽ መልሶች።",
+                faq1Q: "የተለመደው ዝቅተኛው የውል ርዝመት ስንት ነው?",
+                faq1A: "ቢያንስ <span class='font-bold'>ለሶስት ወራት</span> ቁርጠኝነት እንጠይቃለን። ይህ ጊዜ ለግኝት ምዕራፍ፣ ለዘመቻው አፈፃፀም እና ትርጉም ላለው ማመቻቸት በቂ ዳታ ለመሰብሰብ አስፈላጊ ነው። ለአጭር ጊዜ ሙከራ አንሰራም።",
+                faq2Q: "የምትሰሩት በሀዋሳ ብቻ ነው ወይስ አገር አቀፍ?",
+                faq2A: "ዋና መሥሪያ ቤታችን በሀዋሳ ቢሆንም፣ <span class='font-bold'>ስትራቴጂያዊ ተደራሽነታችን አገር አቀፍ</span> ነው። በኢትዮጵያ ውስጥ በማንኛውም ትልቅ ከተማ ወይም ክልል ላይ ያነጣጠሩ ዲጂታል ዘመቻዎችን እናስተዳድራለን።",
+                faq3Q: "የፈጠራ ንብረቶች (ቪዲዮዎች፣ ግራፊክስ) ባለቤት ማን ነው?",
+                faq3A: "በተስማማው የውል ጊዜ በተሳካ ሁኔታ ሲጠናቀቅ፣ <span class='font-bold'>ኩባንያዎ</span> በእርስዎ ስም ለተዘጋጁ ሁሉም የፈጠራ ንብረቶች ሙሉ ባለቤትነት እና የፍቃድ መብቶችን ይይዛል።",
+                faq4Q: "አፈፃፀምን እንዴት እንከታተላለን?",
+                faq4A: "እንደ ኢንቨስትመንት ላይ የሚገኘው ትርፍ (ROI)፣ የእርሳስ ጥራት እና የብራንድ ተደራሽነት ባሉ ቁልፍ መለኪያዎች ላይ የሚያተኩሩ <span class='font-bold'>ሳምንታዊ የአፈፃፀም ሪፖርቶችን</span> እናቀርባለን።",
+
+                // CTA Goal
+                goalTitle: "ዋና ተልዕኳችን፡ <span class='text-keyline-gold'>95% የብራንድ ስልጣን</span>",
+                goalSubtitle: "ከእያንዳንዱ የሽያጭ እድል በፊት የሚመጣውን ስም በማህበረሰቡ እና በዋና ዋና ብሔራዊ ስነ-ሕዝብ ላይ እንገነባለን። ጠቅታዎችን ብቻ ሳይሆን ግንዛቤን እየሸጥን ነው።",
+                goalCTA: "የምክክር ጊዜዎን ይያዙ",
+                
+                // Contact Section
+                contactTitle: "ከቁልፍ መስመር ጋር ይገናኙ",
+                contactSubtitle: "ድርጅትዎን ከፍ ለማድረግ ዝግጁ ነዎት? ቅጹን ይሙሉ ወይም በሀዋሳ የሚገኘውን ዋና መሥሪያ ቤታችንን ይጎብኙ።",
+                hqTitle: "የሀዋሳ ዋና መሥሪያ ቤት",
+                hqAddressLabel: "አካላዊ ቦታ",
+                hqAddress: "ፒያሳ፣ አቢሲንያ ባንክ ህንፃ፣ 3ኛ ፎቅ፣ <br> ሀዋሳ፣ ኢትዮጵያ",
+                contactLabel: "ቀጥተኛ ግንኙነት",
+                contactPhoneLabel: "ስልኮች:",
+                contactEmailLabel: "ኢሜይል:",
+                hoursLabel: "የቢሮ ሰዓታት",
+                hoursDetail: "<span class='font-bold'>ሰኞ - እሑድ:</span> ከ8:00 ጥዋት – 6:00 ከሰዓት (EAT)",
+
+                // Form Labels
+                formName: "ስምዎ",
+                formOrg: "ድርጅት",
+                formEmail: "ኢሜይል አድራሻ",
+                formBrief: "የፕሮጀክት አጭር መግለጫ",
+                formSendCTA: "አስተማማኝ ጥያቄ ይላኩ",
+                formStatusEN: "እናመሰግናለን! አስተማማኝ ጥያቄዎ ተመዝግቧል። የቁልፍ መስመር ስትራቴጂስት ደረሰኝ ለማረጋገጥ በቅርቡ ያነጋግርዎታል።"
+            },
+            en: {
+                // English content matches the existing HTML text and is loaded by default
+            }
+        };
+
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            if (currentLang === lang) return; // Prevent unnecessary switch
+
+            currentLang = lang;
+            
+            // 1. Update active state styles for EN/AM buttons
+            document.getElementById('langEn').classList.remove('lang-active', 'lang-inactive');
+            document.getElementById('langAm').classList.remove('lang-active', 'lang-inactive');
+            
+            document.getElementById('lang' + (lang === 'en' ? 'En' : 'Am')).classList.add('lang-active');
+            document.getElementById('lang' + (lang === 'en' ? 'Am' : 'En')).classList.add('lang-inactive');
+
+            // 2. Translate content based on 'data-lang-key' attributes
+            const langMap = translations[lang];
+            const elementsToTranslate = document.querySelectorAll('[data-lang-key]');
+
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (key && langMap[key]) {
+                    // Update content. Use innerHTML to allow for <span> and <br> tags within translations
+                    element.innerHTML = langMap[key];
+                    
+                    // Update the page title separately if it has a key
+                    if (element.id === 'pageTitle') {
+                        document.title = langMap[key].replace(/<[^>]*>?/gm, ''); // Remove HTML tags for <title>
+                    }
+                } else if (lang === 'en' && element.getAttribute('data-en-original')) {
+                    // If switching back to English, restore from original HTML content
+                    element.innerHTML = element.getAttribute('data-en-original');
+                    
+                    if (element.id === 'pageTitle') {
+                        document.title = element.getAttribute('data-en-original').replace(/<[^>]*>?/gm, '');
+                    }
+                }
+            });
+            
+            // Handle form status message if it was visible
+            const statusMessage = document.getElementById('statusMessage');
+            if (statusMessage && statusMessage.classList.contains('block')) {
+                // Ensure the status message text is also updated if it's currently showing
+                statusMessage.textContent = lang === 'en' 
+                    ? translations.en.formStatusEN || "Thank you! Your secure inquiry has been logged. A KeyLine strategist will contact you shortly to confirm receipt."
+                    : translations.am.formStatusEN;
+            }
+        }
+
+        // --- MENU TOGGLE ---
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            
+            navLinks.classList.toggle('open');
+            
+            if (navLinks.classList.contains('open')) {
+                navLinks.classList.remove('hidden');
+            } else {
+                setTimeout(() => {
+                    if (!navLinks.classList.contains('open')) {
+                        navLinks.classList.add('hidden');
+                    }
+                }, 300);
+            }
+        }
+
+        // --- CONTACT FORM HANDLER ---
+        function handleContactForm(event) {
+            event.preventDefault(); 
+            const statusMessage = document.getElementById('statusMessage');
+            
+            statusMessage.classList.remove('hidden');
+            statusMessage.classList.add('bg-gray-100', 'text-keyline-navy', 'block', 'border-keyline-gold');
+            
+            // Set message based on current language
+            if (currentLang === 'am' && translations.am.formStatusEN) {
+                statusMessage.textContent = translations.am.formStatusEN;
+            } else {
+                statusMessage.textContent = "Thank you! Your secure inquiry has been logged. A KeyLine strategist will contact you shortly to confirm receipt.";
+            }
+            
+            event.target.reset();
+        }
+
+        // --- SMOOTH SCROLL IMPLEMENTATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial check to store English originals for dynamic restoration
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                // Only store if not already stored
+                if (!element.getAttribute('data-en-original')) {
+                    element.setAttribute('data-en-original', element.innerHTML);
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href && href.length > 1) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(href);
+                        
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                        
+                        const navLinks = document.getElementById('navLinks');
+                        if (navLinks.classList.contains('open')) {
+                            setTimeout(toggleMenu, 100); 
+                        }
+                    }
+                });
+            });
+            
+            // Initial language setting (if needed, default is 'en')
+            // switchLanguage('en'); 
+        });
+        
+    </script>
+</body>
+</html>
